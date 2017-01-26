@@ -30,31 +30,44 @@
         android:text="Click on the number you think is bigger. \n Beware it will get harder"
         android:textAlignment="center" />
 
-    <Button
+    <TextView
+        android:text="Points: 0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/subtitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="171dp"
-        android:id="@+id/button1"
-        tools:text="num1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@android:style/Widget.Button.Inset"
-        android:onClick="Button1Click" />
+        android:layout_above="@+id/button2Right"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:id="@+id/Points"
+        android:textSize="18sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
+        android:layout_marginTop="166dp"
+        android:id="@+id/button1Left"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button"
+        android:onClick="Button1Click"
+        android:text="0"
+        android:layout_below="@+id/subtitle"
+        android:layout_alignLeft="@+id/Title"
+        android:layout_alignStart="@+id/Title"
+        android:elevation="0dp"
+        android:maxHeight="@android:dimen/app_icon_size"
+        android:minHeight="99dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2Right"
+        style="@style/Widget.AppCompat.Button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:onClick="Button2Click"
+        android:text="1"
+        android:layout_alignBaseline="@+id/button1Left"
+        android:layout_alignBottom="@+id/button1Left"
         android:layout_alignRight="@+id/Title"
         android:layout_alignEnd="@+id/Title"
-        android:id="@+id/button2"
-        tools:text="num2"
-        style="@android:style/Widget.Button.Inset"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:onClick="Button2Click" />
+        android:minHeight="99dp" />
 
 </RelativeLayout>
