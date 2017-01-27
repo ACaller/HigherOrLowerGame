@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     int num1 = 0;
     int num2 = 1;
-    int points = 0;
+    int points = 0; //How many points the user has scored
+    int range = 10; //The range for the random numbers
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -52,13 +53,19 @@ public class MainActivity extends AppCompatActivity {
 
     //Function that generates new random numbers
     private void roll() {
+
+        //Increasing difficulty with increasing gaps between difficulty jumps
+        if (range==points){
+            range+=range;
+        }
+
         Random r = new Random();
-        num1 = r.nextInt(9);
-        num2 = r.nextInt(9);
+        num1 = r.nextInt(range);
+        num2 = r.nextInt(range);
 
         //Ensures the 2 numbers are not the same
         while (num1 == num2) {
-            num2 = r.nextInt(9);
+            num2 = r.nextInt(range);
         }
 
         Button left = (Button) findViewById(R.id.button1Left);
