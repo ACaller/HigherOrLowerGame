@@ -70,14 +70,4 @@
         android:layout_alignStart="@+id/Title"
         android:layout_marginBottom="124dp" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/subtitle">
-
-    </GridLayout>
-
 </RelativeLayout>

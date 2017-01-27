@@ -1,9 +1,11 @@
 package com.example.aviva.higherorlowergame;
 
+import android.content.res.Resources;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void Button1Click(View view) {
         checkNumbers(num1, num2);
         roll();
+        moveThem();
 
     }
 
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         roll();
     }
 
+    //Checks if the user chose the bigger number or not
     private void checkNumbers(int a, int b) {
         if (a > b) {
             points++;
@@ -72,6 +76,30 @@ public class MainActivity extends AppCompatActivity {
         left.setText("" + num1);
         Button right = (Button) findViewById(R.id.button2Right);
         right.setText("" + num2);
+    }
+
+    //Function to move the buttons around the screen
+    private void moveThem(){
+        //Find the maximum height the squares can move to. Don't want them above subtitle.
+        TextView Subtitle = (TextView)findViewById(R.id.subtitle);
+        int topmost = Subtitle.getBottom();
+
+        //Find width and height of screen
+        int maxwidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int maxheight = Resources.getSystem().getDisplayMetrics().heightPixels;
+        //Get width of button
+        Button left = (Button)findViewById(R.id.button1Left);
+
+        Random r = new Random();
+        int leftSide = r.nextInt(maxwidth-left.getWidth());
+        //Between the bottom of the subtitle and the bottom of the screen, but leaving space so the whole box fits
+        int topSide = r.nextInt(topmost-left.getHeight()-maxheight+1)+maxheight;
+
+
+
+
+
+
     }
 
     @Override
