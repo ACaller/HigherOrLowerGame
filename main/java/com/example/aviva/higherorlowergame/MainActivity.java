@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void Button1Click(View view) {
         checkNumbers(num1, num2);
         roll();
-        moveThem();
+        //moveThem();
 
     }
 
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         right.setText("" + num2);
     }
 
+    /*
     //Function to move the buttons around the screen
     private void moveThem(){
         //Find the maximum height the squares can move to. Don't want them above subtitle.
@@ -95,12 +96,7 @@ public class MainActivity extends AppCompatActivity {
         //Between the bottom of the subtitle and the bottom of the screen, but leaving space so the whole box fits
         int topSide = r.nextInt(topmost-left.getHeight()-maxheight+1)+maxheight;
 
-
-
-
-
-
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
