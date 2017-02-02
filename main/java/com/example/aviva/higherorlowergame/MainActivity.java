@@ -1,7 +1,10 @@
 package com.example.aviva.higherorlowergame;
 
 import android.content.res.Resources;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private GoogleApiClient client;
 
     public void Button1Click(View view) {
+        Button button = (Button)findViewById(R.id.button1Left);
+        button.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         checkNumbers(num1, num2);
         roll();
         //moveThem();
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Button2Click(View view) {
+        Button button = (Button)findViewById(R.id.button2Right);
+        button.getBackground().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
         checkNumbers(num2, num1);
         roll();
     }
@@ -77,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         Button right = (Button) findViewById(R.id.button2Right);
         right.setText("" + num2);
     }
+
 
     /*
     //Function to move the buttons around the screen
