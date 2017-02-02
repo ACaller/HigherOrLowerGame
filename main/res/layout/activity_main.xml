@@ -11,50 +11,81 @@
     tools:context="com.example.aviva.higherorlowergame.MainActivity">
 
     <TextView
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Which number is bigger?"
-        android:id="@+id/Title"
-        android:textSize="24sp"
-        android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Which number is bigger?"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:id="@+id/subtitle"
         android:text="Click on the number you think is bigger. \n Beware it will get harder"
         android:textAlignment="center" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/subtitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="171dp"
-        android:id="@+id/button1"
-        tools:text="num1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@android:style/Widget.Button.Inset"
-        android:onClick="Button1Click" />
 
-    <Button
+    <TextView
+        android:id="@+id/Points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
-        android:layout_alignRight="@+id/Title"
-        android:layout_alignEnd="@+id/Title"
-        android:id="@+id/button2"
-        tools:text="num2"
-        style="@android:style/Widget.Button.Inset"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:onClick="Button2Click" />
+        android:layout_marginTop="56dp"
+        android:text="Points: 0"
+        android:textSize="18sp"
+        android:layout_below="@+id/subtitle"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/Points"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/button1Left"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="120dp"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:background="@drawable/balloon2"
+            android:maxHeight="@android:dimen/app_icon_size"
+            android:onClick="Button1Click"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="normal|bold"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/filler"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button2Right"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_gravity="end"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:onClick="Button2Click"
+            android:background="@drawable/balloon2"
+            android:maxHeight="@android:dimen/app_icon_size"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>
