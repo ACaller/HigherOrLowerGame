@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private GoogleApiClient client;
 
     public void Button1Click(View view) {
-        Button button = (Button)findViewById(R.id.button1Left);
-        button.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        //Button button = (Button)findViewById(R.id.button1Left);
+        //button.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        changeColour();
         checkNumbers(num1, num2);
         roll();
         //moveThem();
@@ -42,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Button2Click(View view) {
-        Button button = (Button)findViewById(R.id.button2Right);
-        button.getBackground().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
+        //Button button = (Button)findViewById(R.id.button2Right);
+        //button.getBackground().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
+        changeColour();
         checkNumbers(num2, num1);
         roll();
     }
@@ -85,6 +87,34 @@ public class MainActivity extends AppCompatActivity {
         right.setText("" + num2);
     }
 
+//Function to change the colour of the balloons
+    private void changeColour(){
+        Random r = new Random();
+        int choice = r.nextInt(4);
+        Button button = (Button)findViewById(R.id.button1Left);
+        switch (choice){
+            case 0: {//blue, works fine
+                button.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                break;
+            }
+            case 1: {
+                button.getBackground().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
+                break;
+            }
+            case 2: {//green works fine
+                button.getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
+            }
+            case 3: {//should be yellow
+                button.getBackground().setColorFilter(0xFFF4D03F, PorterDuff.Mode.MULTIPLY);
+                break;
+            }
+            case 4: {
+                button.getBackground().setColorFilter(0xFFFFFF00, PorterDuff.Mode.MULTIPLY);
+                break;
+            }
+        }
+
+    }
 
     /*
     //Function to move the buttons around the screen
